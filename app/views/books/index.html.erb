@@ -1,0 +1,16 @@
+<h1>Books</h1>
+<% @books.each do |book| %>
+<p>title</p>
+<span><%= book.title %></span>
+<p>body</p>
+<span><%= book.body %></span>
+<% end %>
+
+<h2>New Book</h2>
+<%= form_with model: @book, url: books_path, method: :post do |f| %>
+<p>title</p>
+<%= f.text_field :title %>
+<P>body</P>
+<%= f.text_field :body %>
+<%= f.submit 'Create Book' %>
+<% end %>
