@@ -9,6 +9,14 @@
 <%= link_to "destroy", book_path(book.id), method: :delete, "data-confirm" =>"Are you sure?" %>
 <% end %>
 
+<% if @book.errors.any? %>
+  <%= @book.errors.count %>error prohibited this book from being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |messages| %>
+      <li><%= messages %></li>
+    <% end %>
+  </ul>
+<% end %>
 <h2>New Book</h2>
 <%= form_with model: @book, url: books_path, method: :post do |f| %>
 <p>title</p>
