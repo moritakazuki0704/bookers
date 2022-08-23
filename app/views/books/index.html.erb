@@ -45,6 +45,7 @@
     <% end %>
   </ul>
 <% end %>
+<% if @book.errors.any? %>
   <div class="field_with_errors">
     <p>title</p>
     <%= f.text_field :title %>
