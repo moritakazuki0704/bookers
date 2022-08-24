@@ -17,10 +17,14 @@
 <%= f.text_field :title %>
 </div>
 <div class="field">
-<%= f.label :body 
+<%= f.label :body %>
 <%= f.text_area :body %>
 </div>
 <div class="action">
 <%= f.submit 'Update Book' %>
 </div>
 <% end %>
+<div class = "btn">
+<%= link_to "edit", edit_book_path(@book.id), class: "btn btn--orange btn--cubic btn--shadow"%>
+<%= link_to "back", books_path, class: "btn btn--orange btn--cubic btn--shadow" %>
+</div>
