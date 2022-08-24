@@ -1,35 +1,25 @@
 <h1>Editing Book</h1>
 <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>error prohibited this book from being saved:
-  <ul>
-    <% @book.errors.full_messages.each do |messages| %>
-      <li><%= messages %></li>
-    <% end %>
-  </ul>
-<% end %>
-<% if @book.errors.any? %>
-  <div class="field_with_errors">
-    <p>title</p>
-    <%= f.text_field :title %>
-  </div>
-<% else %>
-  <div class="field">
-    <p>title</p>
-    <%= f.text_field :title %>
-  </div>
-<% end %>
-<% if @book.errors.any? %>
-  <div class="field_with_errors">
-  <p>body</p>
-  <%= f.text_area :body %>
-  </div>
-<% else %>
-  <div class="field">
-  <p>body</p>
-  <%= f.text_area :body %>
+  <div class = "errors">
+    <div class = "errors-count">
+      <%= @book.errors.count %>error prohibited this book from being saved:
+    </div>
+    <ul class = "errors-messages">
+      <% @book.errors.full_messages.each do |messages| %>
+        <li><%= messages %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
-<% end %>
+<div class="field">
+<%= f.label :title %>
+<%= f.text_field :title %>
+</div>
+<div class="field">
+<%= f.label :body 
+<%= f.text_area :body %>
+</div>
 <div class="action">
 <%= f.submit 'Update Book' %>
 </div>
