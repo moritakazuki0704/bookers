@@ -13,6 +13,6 @@
  <p><%= @book.body %></p>
 </div>
 <div class = "btn">
-<%= link_to "show", book_path(@book.id), class: "btn btn--orange btn--cubic btn--shadow"%>
-<%= link_to "back", books_path, class: "btn btn--orange btn--cubic btn--shadow" %>
+<%= link_to "Edit", edit_book_path(@book.id), class: "btn btn--orange btn--cubic btn--shadow"%>
+<%= link_to "Back", books_path, class: "btn btn--orange btn--cubic btn--shadow" %>
 </div>
